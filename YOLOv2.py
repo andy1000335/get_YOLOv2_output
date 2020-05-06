@@ -135,7 +135,7 @@ def NonMaximumSuppression(bboxes):
 
 
 model = './yolov2_dog.pb'
-originImage = Image.open('./testImage.jpg')
+originImage = Image.open('image/testImage.jpg')
 
 
 originImage = np.array(originImage)
