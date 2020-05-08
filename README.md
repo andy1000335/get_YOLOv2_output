@@ -13,7 +13,7 @@
 - AnchorNum：anchor 數量，YOLOv2 為 5  
 因此 output 為 13 x 13 x [(5+classes)x5]
 ## Bounding Box
-<img src="image/detail.jpg" width="300">  
+<img src="image/detail.jpg" width="600">  
 此處假設共有 20 個 class，因此輸出為 13x13x125  
 每一個 cell 可以取得 5 個不同大小的 bounding box，若其 confidence 乘上 class 的準確率(最大的那一個)大於 threshold 即為我們要的 bounding box  
 ## 輸入 Resize
