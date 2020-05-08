@@ -25,3 +25,14 @@ YOLOv2 輸入大小為 416x416，因此圖片輸入時必須先 resize 為 416x4
 <img src="image/resize.jpg" width="300">  
 
 - 以```min(w/img_w, h/img_h)```比例將原圖縮放，剩下的區域(灰色)填入 (128, 128, 128)
+
+## Non-Maximum Suppression (NMS)
+到目前為止得到的 bounding box 不一定都是我們想要的，例如同一個物件可能被同時框兩次以上  
+NMS 主要是計算兩個 bounding box 間的 IoU，若 IoU 大於某個 threshold 代表兩個 bounding box 交疊  
+1. 建立一空集合 output = {}
+2. 將 bounding box 依信心指數排序
+3. 信心指數最高的 bounding box 即為我們要的，將其加入 output 集合內
+4. 將其他的 bounding box 與剛剛選出來的 bounding box 計算 IoU，若大於某個 threshold 則將其信心指數設為 0
+5. 剩下的 bounding box 再取出信心指數最高的加入 output 集合內並重複步驟 4
+6. 持續進行以上步驟直至沒有信心指數大於 0 的 bounding box  
+最後 output 集合內的 bounding box 即為我們要的輸出
