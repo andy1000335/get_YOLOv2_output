@@ -1,7 +1,7 @@
 # YOLOv2
 ## YOLOv2 架構
 ![](image/yolov2Architecture.jpg)  
-- YOLOv2 downscaling 5 次，因此輸出 cell 數為 13x13 (416/2^5=13)
+- YOLOv2 downscaling 5 次，因此輸出 cell 數為 13x13 (416/2^5=13)，每一個 cell 大小為 32x32
 ### 輸入
 - input size：416x416x3
 ### 輸出
@@ -16,3 +16,7 @@
 ![](image/detail.jpg)  
 此處假設共有 20 個 class，因此輸出為 13x13x125  
 每一個 cell 可以取得 5 個不同大小的 bounding box，若其 confidence 乘上 class 的準確率(最大的那一個)大於 threshold 即為我們要的 bounding box  
+## 輸入 Resize
+YOLOv2 輸入大小為 416x416，因此圖片輸入時必須先 resize 為 416x416  
+為防止圖片變形，必須將長寬等比例縮放，並將不足的部分填入(128, 128, 128) 
+![](image/resize.jpg)
