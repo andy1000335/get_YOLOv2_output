@@ -35,4 +35,7 @@ NMS 主要是計算兩個 bounding box 間的 IoU，若 IoU 大於某個 thresho
 4. 將其他的 bounding box 與剛剛選出來的 bounding box 計算 IoU，若大於某個 threshold 則將其信心指數設為 0
 5. 剩下的 bounding box 再取出信心指數最高的加入 output 集合內並重複步驟 4
 6. 持續進行以上步驟直至沒有信心指數大於 0 的 bounding box  
+
 最後 output 集合內的 bounding box 即為我們要的輸出
+
+![](image/NMS.jpg)
