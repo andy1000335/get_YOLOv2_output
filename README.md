@@ -12,6 +12,7 @@
 - confidence：bounding box 信心指數
 - classes：各個類別的準確率
 - AnchorNum：anchor 數量，YOLOv2 為 5  
+
 因此 output 為 13 x 13 x [(5+classes)x5]
 
 ## Bounding Box
