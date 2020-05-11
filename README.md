@@ -45,6 +45,6 @@ NMS 主要是計算兩個 bounding box 間的 IoU，若 IoU 大於某個 thresho
 
 ## Demo
 ### input
-![](image/testImage.jpg)
+<img src="image/testImage.jpg" width="300">  
 ### output
-![](image/demo.png)
+<img src="image/demo.png" width="300">  
