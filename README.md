@@ -42,3 +42,9 @@ NMS 主要是計算兩個 bounding box 間的 IoU，若 IoU 大於某個 thresho
 最後 output 集合內的 bounding box 即為我們要的輸出
 
 ![](image/NMS.jpg)
+
+## Demo
+### input
+![](image/testImage.jpg)
+### output
+![](image/demo.png)
