@@ -19,7 +19,7 @@
 <img src="image/detail.jpg" width="600">  
 此處假設共有 20 個 class，因此輸出為 13x13x125  
 每一個 cell 可以取得 5 個不同大小的 bounding box，若其 confidence 乘上 class 的準確率(最大的那一個)大於 threshold 即為我們要的 bounding box  
-<br/>
+<br/>  
 註：YOLOv2 的 Bounding Box 參數是在縮小 1/32 後的 feature map 上對應的大小，因此最後必須承上 32 取得實際的大小
 
 ## 輸入 Resize
