@@ -83,8 +83,8 @@ def getAnchorBox(tensorFlowOutput, cellCol, cellRow, box, numClass, offset):
 
 def getBestBoundingBox(bbox):
     label, param = argmax(softmax(bbox.classes))
-    cofidenceOfClass = param * bbox.confidence
-    if (cofidenceOfClass > THRESHOLD):
+    confidenceOfClass = param * bbox.confidence
+    if (confidenceOfClass > THRESHOLD):
         tempLeft = bbox.x - bbox.w/2
         tempTop = bbox.y - bbox.h/2
         tempRight = tempLeft + bbox.w
@@ -94,7 +94,7 @@ def getBestBoundingBox(bbox):
         right = max(tempLeft, tempRight)
         top = min(tempTop, tempBottom)
         bottom = max(tempTop, tempBottom)
-        return [cofidenceOfClass, BoundingBoxPosition(left, right, top, bottom), label]
+        return [confidenceOfClass, BoundingBoxPosition(left, right, top, bottom), label]
     else:
         return None
 
